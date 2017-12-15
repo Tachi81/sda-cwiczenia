@@ -8,4 +8,18 @@ var library = [
     { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
     ];
 
-    
+    function rodzajSrtowania (coSortowac, poCzymSortowac){
+        sort(coSortowac)
+
+        if (String(coSortowac[1]).split(",").indexOf(poCzymSortowac) == 0 ){
+            sort()
+        }
+        if (String(coSortowac[1]).split(",").indexOf(poCzymSortowac) == 1 ){
+            sort()
+        }
+        if (String(coSortowac[1]).split(",").indexOf(poCzymSortowac) == 2 ){
+           sort()            
+        }
+
+    }
+    sort(library,library)
