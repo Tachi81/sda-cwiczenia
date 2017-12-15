@@ -10,6 +10,8 @@ function sprawdzOdwracalnosc(tablicaSlow) {
         }
     });
 }
+
+
 sprawdzOdwracalnosc(slowa);
 var word = ["sos", "test", "zaraz", "dwa", "oko"];
 
