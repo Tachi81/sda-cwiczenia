@@ -13,16 +13,32 @@
 
 var files = ["obrazek.jpg", "avatar.png", "cv.pdf", "finanse.xls", 'a.jpg.exe'];
 
-function sprawdzenieTypu(tablicaPlikow){
-  var tablicaTypow= tablicaPlikow.split(".");
-  tablicaTypow.forEach(element => {
+function sprawdzenieTypu(tablicaPlikow) {
+    for (let i = 0; i < tablicaPlikow.length; i++) {
+        const fileName = tablicaPlikow[i]
+        const temp = tablicaPlikow[i].split(".")
+        fileType = temp[temp.length - 1];
 
-     if (element[tablicaPlikow.split(".").length-1]==("jpg"||"png"||"psd")) {
-         console.log('obraz')
-     };      
-  });
-  console.log(tablicaTypow);
+        switch (fileType) {
+            case 'jpg':
+            case 'png':
+            case 'psd': console.log(fileName, ' to obraz');
+                break;
+
+            case 'doc':
+            case 'txt':
+            case 'xls':
+            case 'pdf': console.log(fileName, ' to dokument');
+                break;
+
+            case 'exe':
+            case 'bat': console.log(fileName, ' to aplikacja');
+                break;
+        }
+    }
 }
+
+
 
 sprawdzenieTypu(files);
 //var types = ...
@@ -30,36 +46,36 @@ sprawdzenieTypu(files);
 
 
 //
-var files = ["obrazek.jpg", "avatar.png", "cv.pdf", "finanse.xls", "a.jpg.exe"];
-// var types = 
-files.forEach( element => {
-    showType(element);
- });
+// var files = ["obrazek.jpg", "avatar.png", "cv.pdf", "finanse.xls", "a.jpg.exe"];
+// // var types = 
+// files.forEach( element => {
+//     showType(element);
+//  });
 
-function showType(fileName) {
-    var result;
-    var type = getType(fileName);
-    switch (type) {
-        case "jpg":
-        case "png":
-        case "psd":
-            result = "obraz";
-            break;
-        case "doc":
-        case "txt":
-        case "xls":
-        case "pdf":
-            result = "dokument";
-            break;
-        case "exe":
-        case "bat":
-            result = "aplikacja";
-            break;
-    }
-    console.log (fileName, "jest typu", result);
+// function showType(fileName) {
+//     var result;
+//     var type = getType(fileName);
+//     switch (type) {
+//         case "jpg":
+//         case "png":
+//         case "psd":
+//             result = "obraz";
+//             break;
+//         case "doc":
+//         case "txt":
+//         case "xls":
+//         case "pdf":
+//             result = "dokument";
+//             break;
+//         case "exe":
+//         case "bat":
+//             result = "aplikacja";
+//             break;
+//     }
+//     console.log (fileName, "jest typu", result);
 
-    function getType(fileName) {
-        var array = fileName.split(".");
-        return array[array.length - 1];
-    }
-}
+//     function getType(fileName) {
+//         var array = fileName.split(".");
+//         return array[array.length - 1];
+//     }
+// }
