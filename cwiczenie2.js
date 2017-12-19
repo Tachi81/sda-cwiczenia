@@ -15,8 +15,8 @@ var files = ["obrazek.jpg", "avatar.png", "cv.pdf", "finanse.xls", 'a.jpg.exe'];
 
 function sprawdzenieTypu(tablicaPlikow) {
     for (let i = 0; i < tablicaPlikow.length; i++) {
-        const fileName = tablicaPlikow[i]
-        const singleFile = tablicaPlikow[i].split(".")
+        const fileName = tablicaPlikow[i];
+        const singleFile = tablicaPlikow[i].split(".");
         fileType = singleFile[singleFile.length - 1];
 
         switch (fileType) {
